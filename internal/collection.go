@@ -25,13 +25,13 @@ type Collection struct {
 }
 
 // CollError Error type for all collection-related errors
-// This type is exported - we may want to create and raise CollErrors in the commandParser, for instance
+// This type is exported (along w/ its message field) - we may want to create and raise CollErrors in the commandParser, for instance
 type CollError struct {
-	message string
+	Message string
 }
 
 func (e *CollError) Error() string {
-	return fmt.Sprintf("COLLECTION ERROR: %s", e.message)
+	return fmt.Sprintf("COLLECTION ERROR: %s", e.Message)
 }
 
 // LoadCollection Loads an existant collection from the filesystem

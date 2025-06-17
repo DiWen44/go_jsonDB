@@ -80,7 +80,7 @@ func Parse(command string, coll *internal.Collection) {
 		db, foundKey := coll.DBs[dbName]
 		// Raise non-fatal error & return from method if invalid database name provided
 		if !foundKey {
-			err2 := internal.collError{fmt.Sprintf("NO DATABASE CALLED '%s' IN COLLECTION '%s'", dbName, coll.Name)}
+			err2 := internal.CollError{fmt.Sprintf("NO DATABASE CALLED '%s' IN COLLECTION '%s'", dbName, coll.Name)}
 			fmt.Println(err2.Error())
 			return
 		}
@@ -94,7 +94,7 @@ func Parse(command string, coll *internal.Collection) {
 		db, foundKey := coll.DBs[dbName]
 		// Raise non-fatal error & return from method if invalid database name provided
 		if !foundKey {
-			err := internal.collError{fmt.Sprintf("NO DATABASE CALLED '%s' IN COLLECTION '%s'", dbName, coll.Name)}
+			err := internal.CollError{fmt.Sprintf("NO DATABASE CALLED '%s' IN COLLECTION '%s'", dbName, coll.Name)}
 			fmt.Println(err.Error())
 			return
 		}

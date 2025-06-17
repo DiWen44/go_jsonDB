@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"github.com/golang_db/cmd"
 	"github.com/golang_db/internal"
 	"log"
 	"os"
@@ -33,7 +34,7 @@ func main() {
 			log.Fatal(err)
 		}
 
-		Parse(command, currentCollection)
+		cmd.Parse(command, currentCollection)
 		fmt.Println() // Go to newline for next command
 
 	}
